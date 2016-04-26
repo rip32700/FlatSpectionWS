@@ -1,7 +1,5 @@
 package de.flatspection.domain;
 
-import java.time.LocalDate;
-
 public class User {
 
 	private Long userId;
@@ -10,19 +8,20 @@ public class User {
 	private String lastname;
 	private String email;
 	private String password;
-	private LocalDate birthday;
+	private String birthday;
 	private String street;
 	private int streetNumber;
 	private String city;
 	private int zip;
-	private String Type;
+	private String type;
+	private int role;
 	
 	public User() {
 		
 	}
 
 	public User(Long userId, String username, String firstname, String lastname, String email, String password,
-			LocalDate birthday, String street, int streetNumber, String city, int zip, String type) {
+			String birthday, String street, int streetNumber, String city, int zip, String type, int role) {
 		super();
 		this.userId = userId;
 		this.username = username;
@@ -35,7 +34,8 @@ public class User {
 		this.streetNumber = streetNumber;
 		this.city = city;
 		this.zip = zip;
-		Type = type;
+		this.type = type;
+		this.role = role;
 	}
 
 	public Long getUserId() {
@@ -86,11 +86,11 @@ public class User {
 		this.password = password;
 	}
 
-	public LocalDate getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(LocalDate birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
@@ -127,11 +127,19 @@ public class User {
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
+	}
+
+	public int getRole() {
+		return role;
+	}
+
+	public void setRole(int role) {
+		this.role = role;
 	}
 	
 }
