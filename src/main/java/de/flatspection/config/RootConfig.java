@@ -20,7 +20,8 @@ public class RootConfig {
 	public DataSource dataSource() {
 		DriverManagerDataSource ds = new DriverManagerDataSource();
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost:3306/FlatSpection?user=root&password=password");
+		//ds.setUrl("jdbc:mysql://localhost:3306/FlatSpection?user=root&password=password");
+		ds.setUrl("jdbc:mysql://flatspecs.noip.me:3306/flatspecs?user=flatspecs&password=Fl4tSp3cs");
 		return ds;
 	}
 	
