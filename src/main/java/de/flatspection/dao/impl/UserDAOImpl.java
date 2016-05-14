@@ -39,6 +39,7 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User save(User user) {
 		Map<String, Object> parameters = new HashMap<String, Object>();
+		/*
 		parameters.put("username", user.getUsername());
 		parameters.put("firstname", user.getFirstname());
 		parameters.put("lastname", user.getLastname());
@@ -51,12 +52,13 @@ public class UserDAOImpl implements UserDAO {
 		parameters.put("zip", user.getZip());
 		parameters.put("type", user.getType());
 		parameters.put("role", user.getRole());
+		*/
 		jdbcOperations.update(INSERT_USER, parameters);
 		return user;
 	}
 	
 	private User mapUser(ResultSet rs, long rowNumber) throws SQLException {
-		return new User(rs.getLong("USER_ID"), 
+		return new User(); /*rs.getLong("USER_ID"), 
 						rs.getString("USERNAME"),
 						rs.getString("FIRSTNAME"),
 						rs.getString("LASTNAME"),
@@ -69,7 +71,7 @@ public class UserDAOImpl implements UserDAO {
 						rs.getInt("ZIP"),
 						rs.getString("TYPE"),
 						rs.getInt("ROLE")
-				);
+				); */
 	}
 
 }
