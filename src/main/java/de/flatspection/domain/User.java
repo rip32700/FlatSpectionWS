@@ -1,10 +1,13 @@
 package de.flatspection.domain;
 
 import java.time.LocalDate;
+import java.util.List;
+
+import de.flatspection.domain.payment.Payment;
 
 public class User {
 
-	private long id;
+	private String id;
 	private String email;
 	private String password;
 	private String firstname;
@@ -18,14 +21,15 @@ public class User {
 	private boolean isDeleted;
 	private boolean isInactive;
 	private Authority authority;
+	private List<Payment> paymentList; 
 	
 	public User() {
 
 	}
 
-	public User(long id, String email, String password, String firstname, String lastname, LocalDate birthday,
+	public User(String id, String email, String password, String firstname, String lastname, LocalDate birthday,
 			String phone, String mobile, String gender, UserStatus status, Address address, boolean isDeleted,
-			boolean isInactive, Authority authority) {
+			boolean isInactive, Authority authority, List<Payment> paymentList) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -41,13 +45,14 @@ public class User {
 		this.isDeleted = isDeleted;
 		this.isInactive = isInactive;
 		this.authority = authority;
+		this.paymentList = paymentList;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -153,6 +158,14 @@ public class User {
 
 	public void setAuthority(Authority authority) {
 		this.authority = authority;
+	}
+
+	public List<Payment> getPaymentList() {
+		return paymentList;
+	}
+
+	public void setPaymentList(List<Payment> paymentList) {
+		this.paymentList = paymentList;
 	}
 
 }

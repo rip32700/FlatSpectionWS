@@ -1,13 +1,11 @@
 package de.flatspection.dao;
 
-import java.util.List;
-
 import de.flatspection.domain.User;
 
 
-public interface UserDAO {
+public interface UserDAO extends DataAccessObject<User> {
 
-	User findUserById(final Long id);
-	List<User> findAllUser();
-	User save(User user);
+	User findByEmail(final String email);
+	boolean deleteByEmail(final String email);
+	
 }

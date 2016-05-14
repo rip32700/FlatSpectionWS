@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Media {
 
-	private long id;
+	private String id;
 	private String name;
 	private String description;
 	private LocalDate createionDate;
@@ -13,7 +13,7 @@ public class Media {
 
 	}
 
-	public Media(long id, String name, String description, LocalDate createionDate) {
+	public Media(String id, String name, String description, LocalDate createionDate) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -21,11 +21,11 @@ public class Media {
 		this.createionDate = createionDate;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

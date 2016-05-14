@@ -23,7 +23,7 @@ public class UserDAOImpl implements UserDAO {
 	private NamedParameterJdbcOperations jdbcOperations;
 	
 	@Override
-	public User findUserById(Long id) {
+	public User findById(String id) {
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("user_id", id);
 		User user = jdbcOperations.queryForObject(FIND_USER_BY_ID, parameters, this::mapUser);
@@ -31,13 +31,13 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
-	public List<User> findAllUser() {
+	public List<User> findAll() {
 		List<User> userList = jdbcOperations.query(FIND_ALL_USERS, this::mapUser);
 		return userList;
 	}
 	
 	@Override
-	public User save(User user) {
+	public boolean save(User user) {
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		/*
 		parameters.put("username", user.getUsername());
@@ -54,7 +54,7 @@ public class UserDAOImpl implements UserDAO {
 		parameters.put("role", user.getRole());
 		*/
 		jdbcOperations.update(INSERT_USER, parameters);
-		return user;
+		return true;
 	}
 	
 	private User mapUser(ResultSet rs, long rowNumber) throws SQLException {
@@ -73,5 +73,30 @@ public class UserDAOImpl implements UserDAO {
 						rs.getInt("ROLE")
 				); */
 	}
+
+	@Override
+	public boolean delete(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public User findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteByEmail(String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(User object) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 
 }

@@ -7,7 +7,7 @@ import de.flatspection.domain.communication.Communication;
 
 public class RentalProperty {
 
-	private long id;
+	private String id;
 	private Address address;
 	private User advertiser;
 	private LocalDate creationDate;
@@ -20,7 +20,7 @@ public class RentalProperty {
 
 	}
 
-	public RentalProperty(long id, Address address, User advertiser, LocalDate creationDate, LocalDate lastEditDate,
+	public RentalProperty(String id, Address address, User advertiser, LocalDate creationDate, LocalDate lastEditDate,
 			Status status, List<Attribute> attributeList, List<Communication> communicationList) {
 		super();
 		this.id = id;
@@ -33,11 +33,11 @@ public class RentalProperty {
 		this.communicationList = communicationList;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
