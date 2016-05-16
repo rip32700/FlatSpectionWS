@@ -1,39 +1,44 @@
 package de.flatspection.domain;
 
-public class Status {
+public class RentalPropertyAttribute {
 
-	private long id;
 	private String name;
 	private String description;
+	private Object value;
 	
-	public Status() {
-		
+	public RentalPropertyAttribute() {
+
 	}
 	
-	public Status(long id, String name, String description) {
+	public RentalPropertyAttribute(String name, String description, Object value) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.description = description;
+		this.value = value;
 	}
 
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
+	
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Object getValue() {
+		return value;
+	}
+
+	public void setValue(Object value) {
+		this.value = value;
 	}
 	
 }

@@ -1,37 +1,30 @@
 package de.flatspection.domain.communication;
 
+import java.time.LocalDate;
 import java.util.List;
 
-
-import de.flatspection.domain.User;
+import de.flatspection.domain.media.Media;
+import de.flatspection.domain.user.User;
 
 public class Message {
 
-	private long id;
 	private User sender;
 	private String content;
 	private List<Media> mediaList;
 	private boolean isRead;
+	private LocalDate sendDate;
 	
 	public Message() {
 
 	}
 
-	public Message(long id, User sender, String content, List<Media> mediaList, boolean isRead) {
+	public Message(User sender, String content, List<Media> mediaList, boolean isRead, LocalDate sendDate) {
 		super();
-		this.id = id;
 		this.sender = sender;
 		this.content = content;
 		this.mediaList = mediaList;
 		this.isRead = isRead;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
+		this.sendDate = sendDate;
 	}
 
 	public User getSender() {
@@ -65,5 +58,14 @@ public class Message {
 	public void setRead(boolean isRead) {
 		this.isRead = isRead;
 	}
+
+	public LocalDate getSendDate() {
+		return sendDate;
+	}
+
+	public void setSendDate(LocalDate sendDate) {
+		this.sendDate = sendDate;
+	}
+
 	
 }

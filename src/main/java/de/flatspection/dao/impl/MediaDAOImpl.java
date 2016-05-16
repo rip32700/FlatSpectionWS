@@ -3,7 +3,7 @@ package de.flatspection.dao.impl;
 import java.util.List;
 
 import de.flatspection.dao.MediaDAO;
-import de.flatspection.domain.communication.Media;
+import de.flatspection.domain.media.Media;
 
 public class MediaDAOImpl implements MediaDAO {
 

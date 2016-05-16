@@ -1,13 +1,20 @@
-package de.flatspection.domain;
+package de.flatspection.domain.user;
 
 import java.time.LocalDate;
+import java.util.EnumSet;
 import java.util.List;
+import java.util.Locale;
 
+import de.flatspection.domain.Address;
+import de.flatspection.domain.media.MediaTemplate;
 import de.flatspection.domain.payment.Payment;
 
+@Document
 public class User {
 
+	@Id
 	private String id;
+	@Indexed
 	private String email;
 	private String password;
 	private String firstname;
@@ -15,21 +22,21 @@ public class User {
 	private LocalDate birthday;
 	private String phone;
 	private String mobile;
-	private String gender;
-	private UserStatus status;
+	private Gender gender;
+	private EnumSet<UserStatus> statusSet;
 	private Address address;
-	private boolean isDeleted;
-	private boolean isInactive;
 	private Authority authority;
 	private List<Payment> paymentList; 
+	private Locale language;
+	private List<MediaTemplate> mediaTemplateList;
 	
 	public User() {
 
 	}
 
 	public User(String id, String email, String password, String firstname, String lastname, LocalDate birthday,
-			String phone, String mobile, String gender, UserStatus status, Address address, boolean isDeleted,
-			boolean isInactive, Authority authority, List<Payment> paymentList) {
+			String phone, String mobile, Gender gender, EnumSet<UserStatus> statusSet, Address address,
+			Authority authority, List<Payment> paymentList, Locale language, List<MediaTemplate> mediaTemplateList) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -40,20 +47,12 @@ public class User {
 		this.phone = phone;
 		this.mobile = mobile;
 		this.gender = gender;
-		this.status = status;
+		this.statusSet = statusSet;
 		this.address = address;
-		this.isDeleted = isDeleted;
-		this.isInactive = isInactive;
 		this.authority = authority;
 		this.paymentList = paymentList;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
+		this.language = language;
+		this.mediaTemplateList = mediaTemplateList;
 	}
 
 	public String getEmail() {
@@ -112,20 +111,20 @@ public class User {
 		this.mobile = mobile;
 	}
 
-	public String getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 
-	public UserStatus getStatus() {
-		return status;
+	public EnumSet<UserStatus> getStatusSet() {
+		return statusSet;
 	}
 
-	public void setStatus(UserStatus status) {
-		this.status = status;
+	public void setStatusSet(EnumSet<UserStatus> statusSet) {
+		this.statusSet = statusSet;
 	}
 
 	public Address getAddress() {
@@ -134,22 +133,6 @@ public class User {
 
 	public void setAddress(Address address) {
 		this.address = address;
-	}
-
-	public boolean isDeleted() {
-		return isDeleted;
-	}
-
-	public void setDeleted(boolean isDeleted) {
-		this.isDeleted = isDeleted;
-	}
-
-	public boolean isInactive() {
-		return isInactive;
-	}
-
-	public void setInactive(boolean isInactive) {
-		this.isInactive = isInactive;
 	}
 
 	public Authority getAuthority() {
@@ -166,6 +149,26 @@ public class User {
 
 	public void setPaymentList(List<Payment> paymentList) {
 		this.paymentList = paymentList;
+	}
+
+	public Locale getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(Locale language) {
+		this.language = language;
+	}
+
+	public List<MediaTemplate> getMediaTemplateList() {
+		return mediaTemplateList;
+	}
+
+	public void setMediaTemplateList(List<MediaTemplate> mediaTemplateList) {
+		this.mediaTemplateList = mediaTemplateList;
+	}
+
+	public String getId() {
+		return id;
 	}
 
 }

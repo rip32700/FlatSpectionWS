@@ -1,4 +1,4 @@
-package de.flatspection.domain.form;
+package de.flatspection.domain.media.form;
 
 public class Select extends FormElement {
 

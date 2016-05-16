@@ -1,34 +1,30 @@
 package de.flatspection.domain.payment;
 
-import java.util.Currency;
-
-import de.flatspection.domain.Service;
-
 public class InvoiceItem {
 
-	private long id;
+	private int position;
 	private Service service;
-	private int pieces;
-	private Currency total;
+	private int quantity;
+	private Money totalPrice;
 	
 	public InvoiceItem() {
 
 	}
-	
-	public InvoiceItem(long id, Service service, int pieces, Currency pricing) {
+
+	public InvoiceItem(int position, Service service, int quantity, Money totalPrice) {
 		super();
-		this.id = id;
+		this.position = position;
 		this.service = service;
-		this.pieces = pieces;
-		this.total = pricing;
+		this.quantity = quantity;
+		this.totalPrice = totalPrice;
 	}
 
-	public long getId() {
-		return id;
+	public int getPosition() {
+		return position;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setPosition(int position) {
+		this.position = position;
 	}
 
 	public Service getService() {
@@ -39,20 +35,20 @@ public class InvoiceItem {
 		this.service = service;
 	}
 
-	public int getPieces() {
-		return pieces;
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public void setPieces(int pieces) {
-		this.pieces = pieces;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
-	public Currency getPricing() {
-		return total;
+	public Money getTotalPrice() {
+		return totalPrice;
 	}
 
-	public void setPricing(Currency pricing) {
-		this.total = pricing;
+	public void setTotalPrice(Money totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 	
 }

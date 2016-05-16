@@ -1,6 +1,6 @@
 package de.flatspection.dao;
 
-import de.flatspection.domain.User;
+import de.flatspection.domain.user.User;
 
 
 public interface UserDAO extends DataAccessObject<User> {

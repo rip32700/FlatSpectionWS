@@ -1,39 +1,35 @@
 package de.flatspection.domain;
 
+import java.util.Locale;
+
 public class Address {
 
-	private long id;
 	private String street;
 	private int number;
 	private String zip;
 	private String city;
-	private String additionalInformation;
-	private String country;
+	private String addition;
+	private Locale country;
+	private double longitude;
+	private double latitude;
 	
 	public Address() {
 		
 	}
-	
-	public Address(long id, String street, int number, String zip, String city, String additionalInformation,
-			String country) {
+
+	public Address(String street, int number, String zip, String city, String addition, Locale country,
+			double longitude, double latitude) {
 		super();
-		this.id = id;
 		this.street = street;
 		this.number = number;
 		this.zip = zip;
 		this.city = city;
-		this.additionalInformation = additionalInformation;
+		this.addition = addition;
 		this.country = country;
+		this.longitude = longitude;
+		this.latitude = latitude;
 	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
+	
 	public String getStreet() {
 		return street;
 	}
@@ -66,20 +62,36 @@ public class Address {
 		this.city = city;
 	}
 
-	public String getAdditionalInformation() {
-		return additionalInformation;
+	public String getAddition() {
+		return addition;
 	}
 
-	public void setAdditionalInformation(String additionalInformation) {
-		this.additionalInformation = additionalInformation;
+	public void setAddition(String addition) {
+		this.addition = addition;
 	}
 
-	public String getCountry() {
+	public Locale getCountry() {
 		return country;
 	}
 
-	public void setCountry(String country) {
+	public void setCountry(Locale country) {
 		this.country = country;
 	}
-	
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
 }

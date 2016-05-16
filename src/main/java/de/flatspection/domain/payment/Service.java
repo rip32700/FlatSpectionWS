@@ -1,34 +1,28 @@
-package de.flatspection.domain;
+package de.flatspection.domain.payment;
 
 import java.util.Currency;
 
+@Document
 public class Service {
 	
-	private long id;
+	@Id
+	private String id;
 	private String name;
 	private String description;
-	private Currency price;
-	private Currency tax;
+	private Money netPrice;
+	private float tax;
 	
 	public Service() {
 
 	}
 
-	public Service(long id, String name, String description, Currency price, Currency tax) {
+	public Service(String id, String name, String description, Money netPrice, float tax) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.price = price;
+		this.netPrice = netPrice;
 		this.tax = tax;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -47,20 +41,24 @@ public class Service {
 		this.description = description;
 	}
 
-	public Currency getPrice() {
-		return price;
+	public Money getNetPrice() {
+		return netPrice;
 	}
 
-	public void setPrice(Currency price) {
-		this.price = price;
+	public void setNetPrice(Money netPrice) {
+		this.netPrice = netPrice;
 	}
 
-	public Currency getTax() {
+	public float getTax() {
 		return tax;
 	}
 
-	public void setTax(Currency tax) {
+	public void setTax(float tax) {
 		this.tax = tax;
 	}
-	
+
+	public String getId() {
+		return id;
+	}
+
 }

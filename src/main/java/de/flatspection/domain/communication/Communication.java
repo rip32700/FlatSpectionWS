@@ -3,11 +3,13 @@ package de.flatspection.domain.communication;
 import java.time.LocalDate;
 import java.util.List;
 
-import de.flatspection.domain.User;
+import de.flatspection.domain.user.User;
 
+@Document
 public class Communication {
 
-	private long id;
+	@Id
+	private String id;
 	private LocalDate creationDate;
 	private List<Message> messageList;
 	private List<User> userList;
@@ -16,7 +18,7 @@ public class Communication {
 
 	}
 
-	public Communication(long id, LocalDate creationDate, List<Message> messageList, List<User> userList) {
+	public Communication(String id, LocalDate creationDate, List<Message> messageList, List<User> userList) {
 		super();
 		this.id = id;
 		this.creationDate = creationDate;
@@ -24,12 +26,8 @@ public class Communication {
 		this.userList = userList;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public LocalDate getCreationDate() {

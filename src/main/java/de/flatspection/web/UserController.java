@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.flatspection.dao.UserDAO;
-import de.flatspection.domain.User;
+import de.flatspection.domain.user.User;
 
 @RestController
 @RequestMapping("user")

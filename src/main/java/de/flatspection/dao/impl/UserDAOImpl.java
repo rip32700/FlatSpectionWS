@@ -11,7 +11,7 @@ import javax.inject.Inject;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 
 import de.flatspection.dao.UserDAO;
-import de.flatspection.domain.User;
+import de.flatspection.domain.user.User;
 
 public class UserDAOImpl implements UserDAO {
 
